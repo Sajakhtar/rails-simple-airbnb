@@ -2,9 +2,9 @@
 
 <p>All <%= @flats.count %> flats</p>
 
-<div class="d-flex justify-content-between">
+<div class="d-flex flex-wrap justify-content-around">
   <% @flats.each do |flat| %>
-    <div class="card m-2 shadow" style="width: 24rem;">
+    <div class="card m-2 shadow" style="width: 20rem;">
       <img src="https://picsum.photos/id/1029/300/150" class="card-img-top" alt="...">
       <%# <img src="https://source.unsplash.com/random/300x150" class="card-img-top" alt="..."> %>
       <div class="card-body bg-light border-bottom border-light">
@@ -23,10 +23,19 @@
           </div>
         </div>
       </div>
-      <div class="card-footer bg-white">
-        <a href="#" class="card-link text-primary">More Info</a>
+      <div class="card-footer bg-white d-flex justify-content-around">
+        <%# <a href="#" class="card-link text-primary">More Info</a>
         <a href="#" class="card-link text-warning">Edit</a>
-        <a href="#" class="card-link text-danger">Remove</a>
+        <a href="#" class="card-link text-danger">Remove</a> %>
+        <%= link_to flat, class: 'text-primary' do %>
+            <i class="far fa-eye"></i>
+        <% end %>
+        <%= link_to edit_flat_path(flat), class: 'text-warning' do %>
+            <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to flat, method: :delete, class: 'text-danger', data: { confirm: 'Are you sure?' } do %>
+            <i class="far fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
