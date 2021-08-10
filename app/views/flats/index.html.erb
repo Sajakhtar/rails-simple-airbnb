@@ -1,0 +1,33 @@
+<h1>All our flats</h1>
+
+<p>All <%= @flats.count %> flats</p>
+
+<div class="d-flex justify-content-between">
+  <% @flats.each do |flat| %>
+    <div class="card m-2 shadow" style="width: 24rem;">
+      <img src="https://picsum.photos/id/1029/300/150" class="card-img-top" alt="...">
+      <%# <img src="https://source.unsplash.com/random/300x150" class="card-img-top" alt="..."> %>
+      <div class="card-body bg-light border-bottom border-light">
+        <div class="card-content">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="d-flex justify-content-start">
+            <div class="mb-1 mr-3">
+              <i class="fas fa-user-friends"></i>
+              <%= flat.number_of_guests %>
+            </div>
+            <div class="mb-1">
+              <i class="fas fa-dollar-sign"></i>
+              <%= flat.price_per_night %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer bg-white">
+        <a href="#" class="card-link text-primary">More Info</a>
+        <a href="#" class="card-link text-warning">Edit</a>
+        <a href="#" class="card-link text-danger">Remove</a>
+      </div>
+    </div>
+  <% end %>
+</div>
