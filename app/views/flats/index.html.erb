@@ -9,7 +9,8 @@
 <div class="d-flex flex-wrap">
   <% @flats.each do |flat| %>
     <div class="card m-2 shadow" style="width: 20rem;">
-      <img src="https://picsum.photos/id/1029/300/150" class="card-img-top" alt="...">
+      <img src="<%= flat.image_url %>" class="card-img-top" alt="...">
+      <%# <img src="https://picsum.photos/id/1029/300/150" class="card-img-top" alt="..."> %>
       <%# <img src="https://source.unsplash.com/random/300x150" class="card-img-top" alt="..."> %>
       <div class="card-body bg-light border-bottom border-light">
         <div class="card-content">
