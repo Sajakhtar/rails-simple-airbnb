@@ -1,6 +1,10 @@
 <h1>All our flats</h1>
 
-<p>All <%= @flats.count %> flats</p>
+<% if @keyword %>
+  <p>You searched for <strong><%= @keyword %></strong>. We found <%= @flats.count %> flats out of our <%= @total %>  flats on our website.</p>
+<% else %>
+  <p>All <%= @total %> flats.</p>
+<% end %>
 
 <div class="d-flex flex-wrap">
   <% @flats.each do |flat| %>
